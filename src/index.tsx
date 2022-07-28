@@ -51,10 +51,7 @@ const AppleLogin = (props: AppleLoginProps) => {
   } = props;
 
   const [loaded] = useScript(
-    `https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/${(props &&
-      props.designProp &&
-      props.designProp.locale) ||
-      "en_US"}/appleid.auth.js`
+    `./appleid.auth.js`
   );
 
   const onClick = async (e: any = null) => {
@@ -119,7 +116,7 @@ const AppleLogin = (props: AppleLoginProps) => {
         }
       }
     }
-    return () => {};
+    return () => { };
   }, []);
 
   useEffect(() => {
@@ -138,7 +135,7 @@ const AppleLogin = (props: AppleLoginProps) => {
         onClick();
       }
     }
-    return () => {};
+    return () => { };
   }, [loaded, usePopup]);
 
   if (typeof render === "function") {
